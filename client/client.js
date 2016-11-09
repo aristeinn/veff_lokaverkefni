@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import App from '../components/App'
+import navbarInstance from '../components/Navbar.js'
 
 
-render(<App/>, document.getElementById('app'));
+render(<navbarInstance/>, document.getElementById('app'));
