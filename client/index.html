@@ -6,8 +6,6 @@
 	<title>LOKAVERKEFNI</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" type="text/css" href="client/client.css">
-
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
@@ -16,10 +14,55 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
 </head>
 
-<body>
+<body ng-app="tvsiteApp" style="background-color:powderblue; text-align: center; font-size: 20px;">
 	<div id="app"></div>
-	<script src="bundle.js"></script>
+	<script src="https://code.angularjs.org/1.4.7/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.4.7/angular-route.js"></script>
 	<script src="client.js"></script>
+
+
+	<div ng-controller="mainCtrl">
+		<a href="#first">Stod 2</a> |
+		<a href="#second">Stod 2 Sport</a>
+
+		<div ng-view />
+	</div>
+
+	<script type="text/ng-template" id="first.html">
+			Stod 2
+			<table style="height: 1000px; width: 1000px; margin: 0 auto;">
+				<tr >
+					<td>Timi</td>
+					<td>Titill</td>
+					<td>Lysing</td>
+					<td>Lengd</td>
+				</tr>
+				<tr ng-repeat="item in stod2schedule" ng-class="{item.isDone: isDone}" >
+					<td>{{item.startTime | date }} </td>
+					<td>{{item.title}}</td>
+					<td>{{item.description}}</td>
+					<td>{{item.duration}}</td>
+				</tr>
+			</table>
+	</script>
+	<script type="text/ng-template" id="second.html">
+			Stod 2 Sport
+			<table style="height: 1000px; width: 1000px; margin: 0 auto;">
+				<tr>
+					<td>Timi</td>
+					<td>Titill</td>
+					<td>Lysing</td>
+					<td>Lengd</td>
+				</tr>
+				<tr ng-repeat="item in stod2sportschedule" ng-class="{item.isDone: isDone}">
+					<td>{{item.startTime | date }} </td>
+					<td>{{item.title}}</td>
+					<td>{{item.description}}</td>
+					<td>{{item.duration}}</td>
+				</tr>
+			</table>
+	</script>
+	<script src="bundle.js"></script>
 </body>
 
 </html>

@@ -1,25 +1,30 @@
 import React from 'react';
-import {Navbar, Nav, NavItem, LinkContainer, NavDropdown, MenuItem, Collapse} from 'react-bootstrap';
+import { Navbar, Nav, NavItem, LinkContainer, NavDropdown, MenuItem, Collapse } from 'react-bootstrap';
 
 var Header = React.createClass({
-  render: function() {
+  render: function () {
+    var stickyStyle = {
+      positon: 'fixed',
+      top: 0,
+      left: 0,
+    };
     return (
-      <div className="hdrStyle">
-      <Navbar inverse collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="#">Icelandic television schedules</a>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <NavItem eventKey={1} href="#">k.fss.is</NavItem>
-            <NavItem eventKey={2} href="#">apis.is</NavItem>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-      </div>
+          <div className="hdrStyle">
+          <Navbar inverse collapseOnSelect>
+            <Navbar.Header>
+              <Navbar.Brand>
+                <a href="#">Icelandic television schedules</a>
+              </Navbar.Brand>
+              <Navbar.Toggle />
+            </Navbar.Header>
+            <Navbar.Collapse>
+              <Nav>
+                <NavItem eventKey={1} href="#">k.fss.is</NavItem>
+                <NavItem eventKey={2} href="#">apis.is</NavItem>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+        </div>
     );
   }
 });
