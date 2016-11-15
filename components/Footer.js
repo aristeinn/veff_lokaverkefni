@@ -3,30 +3,32 @@ import React from 'react';
 var Footer = React.createClass({
   render: function () {
     var FooterStyle = {
-      backgroundColor: "#E4E4E4",
-      position: "absolute",
+      backgroundColor: "#101010",
+      position: "fixed",
       right: 0,
       bottom: 0,
       left: 0,
-    };
-    var CenterStyle = {
+      fontSize: 12,
       textAlign: "center",
-      fontSize: 20,
+      border: "#101010",
     };
-    var RightStyle = {
-      textAlign: "right",
-      fontSize: 20,
+    var namestyle = {
+      color: 'white',
     };
-    var LeftStyle = {
-      textAlign: "right",
-      fontSize: 20,
-      height: 20
+    var vshstyle = {
+      color: 'white',
     };
     return (
-      <div style={FooterStyle}>
-        <h5 style={CenterStyle}>Ari Steinn Guðmundsson</h5>
-        <h5 style={RightStyle}>Vefsíðuhönnun 303 2016</h5>
-        <h5><a href="https://github.com/aristeinn" style={LeftStyle}>https://github.com/aristeinn</a></h5>
+      <div class="container" style={FooterStyle}>
+        <div style={namestyle}>
+          Ari Steinn Guðmundsson
+        </div>
+        <div style={vshstyle}>
+          Vefsíðuhönnun 303 2016
+        </div>
+        <div>
+          <a href="https://github.com/aristeinn">https://github.com/aristeinn</a>
+        </div>
       </div>
     );
   }
