@@ -13,6 +13,12 @@ var tvsiteApp = angular.module('tvsiteApp', ['ngRoute'])
             .when('/second', {
                 templateUrl: 'second.html'
             })
+            .when('/third', {
+                templateUrl: 'third.html'
+            })
+            .when('/fourth', {
+                templateUrl: 'fourth.html'
+            })
             .otherwise({
                 redirectTo: '/first'
             });
@@ -42,9 +48,23 @@ tvsiteApp
                 $scope.stod2sportschedule = d.results.map(mapster);
             });
 
+        tvService
+            .ruv()
+            .success(function (d) {
+                $scope.ruvschedule = d.results.map(mapster);
+            });
+
+        tvService
+            .stod2bio()
+            .success(function (d) {
+                $scope.stod2bioschedule = d.results.map(mapster);
+            });
+
 
         $scope.stod2schedule = [];
         $scope.stod2sportschedule = [];
+        $scope.ruvschedule = [];
+        $scope.stod2bioschedule = [];
 
     })
     .factory('tvService', ['$http', function ($http) {
@@ -68,8 +88,25 @@ tvsiteApp
                     return err;
                 });
         };
+        obj.ruv = function () {
+            return $http.get('http://apis.is/tv/ruv')
+                .success(function (data) {
+                    return data.results;
+                })
+                .error(function (err) {
+                    return err;
+                });
+        };
+        obj.stod2bio = function () {
+            return $http.get('http://apis.is/tv/stod2bio')
+                .success(function (data) {
+                    return data.results;
+                })
+                .error(function (err) {
+                    return err;
+                });
+        };
 
 
         return obj;
     }]);
-

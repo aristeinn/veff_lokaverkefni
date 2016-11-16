@@ -13,14 +13,14 @@ var Header = React.createClass({
           <Navbar inverse collapseOnSelect>
             <Navbar.Header>
               <Navbar.Brand>
-                <a href="#">Icelandic television schedules</a>
+                <a href="#">Sjónvarpsdagskrár</a>
               </Navbar.Brand>
               <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav>
-                <NavItem eventKey={1} href="#">k.fss.is</NavItem>
-                <NavItem eventKey={2} href="#">apis.is</NavItem>
+                <NavItem eventKey={1} href="http://k.fss.is/">k.fss.is</NavItem>
+                <NavItem eventKey={2} href="http://docs.apis.is/">apis.is</NavItem>
               </Nav>
             </Navbar.Collapse>
           </Navbar>

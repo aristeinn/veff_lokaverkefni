@@ -22,19 +22,21 @@
 
 
 	<div ng-controller="mainCtrl">
-		<a href="#first">Stod 2</a> |
-		<a href="#second">Stod 2 Sport</a>
+		<a href="#first">Stöð 2</a> |
+		<a href="#second">Stöð 2 Sport</a> |
+		<a href="#third">Rúv</a> |
+		<a href="#fourth">Stöð 2 Bíó</a>
 
 		<div ng-view />
 	</div>
 
 	<script type="text/ng-template" id="first.html">
-			Stod 2
+			Stöð 2
 			<table style="height: 1000px; width: 1000px; margin: 0 auto;">
 				<tr >
-					<td>Timi</td>
+					<td>Tími</td>
 					<td>Titill</td>
-					<td>Lysing</td>
+					<td>Lýsing</td>
 					<td>Lengd</td>
 				</tr>
 				<tr ng-repeat="item in stod2schedule" ng-class="{item.isDone: isDone}" >
@@ -46,15 +48,49 @@
 			</table>
 	</script>
 	<script type="text/ng-template" id="second.html">
-			Stod 2 Sport
+			Stöð 2 Sport
 			<table style="height: 1000px; width: 1000px; margin: 0 auto;">
 				<tr>
-					<td>Timi</td>
+					<td>Tími</td>
 					<td>Titill</td>
-					<td>Lysing</td>
+					<td>Lýsing</td>
 					<td>Lengd</td>
 				</tr>
 				<tr ng-repeat="item in stod2sportschedule" ng-class="{item.isDone: isDone}">
+					<td>{{item.startTime | date }} </td>
+					<td>{{item.title}}</td>
+					<td>{{item.description}}</td>
+					<td>{{item.duration}}</td>
+				</tr>
+			</table>
+	</script>
+	<script type="text/ng-template" id="third.html">
+			Rúv
+			<table style="height: 1000px; width: 1000px; margin: 0 auto;">
+				<tr >
+					<td>Tími</td>
+					<td>Titill</td>
+					<td>Lýsing</td>
+					<td>Lengd</td>
+				</tr>
+				<tr ng-repeat="item in ruvschedule" ng-class="{item.isDone: isDone}" >
+					<td>{{item.startTime | date }} </td>
+					<td>{{item.title}}</td>
+					<td>{{item.description}}</td>
+					<td>{{item.duration}}</td>
+				</tr>
+			</table>
+	</script>
+	<script type="text/ng-template" id="fourth.html">
+			Stöð 2 Bíó
+			<table style="height: 1000px; width: 1000px; margin: 0 auto;">
+				<tr >
+					<td>Tími</td>
+					<td>Titill</td>
+					<td>Lýsing</td>
+					<td>Lengd</td>
+				</tr>
+				<tr ng-repeat="item in stod2bioschedule" ng-class="{item.isDone: isDone}" >
 					<td>{{item.startTime | date }} </td>
 					<td>{{item.title}}</td>
 					<td>{{item.description}}</td>
