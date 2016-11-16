@@ -1,15 +1,10 @@
 import React from 'react';
-import { Navbar, Nav, NavItem, LinkContainer, NavDropdown, MenuItem, Collapse } from 'react-bootstrap';
-
+import { Navbar, Nav, NavItem, LinkContainer, NavDropdown, MenuItem, Collapse } from 'react-bootstrap';//importa allt sem þarf fyrir navbarinn
+//header component búinn til
 var Header = React.createClass({
   render: function () {
-    var stickyStyle = {
-      positon: 'fixed',
-      top: 0,
-      left: 0,
-    };
     return (
-          <div className="hdrStyle">
+          <div>
           <Navbar inverse collapseOnSelect>
             <Navbar.Header>
               <Navbar.Brand>

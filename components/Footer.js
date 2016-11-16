@@ -1,7 +1,8 @@
 import React from 'react';
-
+//footer component búinn til
 var Footer = React.createClass({
   render: function () {
+    //stíllinn fyrir footerinn
     var FooterStyle = {
       backgroundColor: "#101010",
       position: "fixed",
@@ -12,6 +13,7 @@ var Footer = React.createClass({
       textAlign: "center",
       border: "#101010",
     };
+    //læt stafina í footernum vera hvítir á litinn
     var namestyle = {
       color: 'white',
     };
