@@ -22,6 +22,9 @@ var tvsiteApp = angular.module('tvsiteApp', ['ngRoute'])
             .when('/fifth', {
                 templateUrl: 'fifth.html'
             })
+            .when('/sixth', {
+                templateUrl: 'sixth.html'
+            })
             .otherwise({
                 redirectTo: '/first'
             });
@@ -52,6 +55,12 @@ tvsiteApp
             });
 
         tvService
+            .stod2sport2()
+            .success(function (d) {
+                $scope.stod2sport2schedule = d.results.map(mapster);
+            });
+
+        tvService
             .ruv()
             .success(function (d) {
                 $scope.ruvschedule = d.results.map(mapster);
@@ -72,6 +81,7 @@ tvsiteApp
 
         $scope.stod2schedule = [];
         $scope.stod2sportschedule = [];
+        $scope.stod2sport2schedule = [];
         $scope.ruvschedule = [];
         $scope.stod2bioschedule = [];
         $scope.stod3schedule = [];
@@ -91,6 +101,15 @@ tvsiteApp
         };
         obj.stod2sport = function () {
             return $http.get('http://apis.is/tv/stod2sport')
+                .success(function (data) {
+                    return data.results;
+                })
+                .error(function (err) {
+                    return err;
+                });
+        };
+        obj.stod2sport2 = function () {
+            return $http.get('http://apis.is/tv/stod2sport2')
                 .success(function (data) {
                     return data.results;
                 })
