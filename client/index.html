@@ -24,9 +24,10 @@
 	<div ng-controller="mainCtrl">
 		<a href="#first">Stöð 2</a> |
 		<a href="#second">Stöð 2 Sport</a> |
-		<a href="#third">Rúv</a> |
-		<a href="#fourth">Stöð 2 Bíó</a> |
-		<a href="#fifth">Stöð 3</a>
+		<a href="#third">Stöð 2 Sport 2</a> |
+		<a href="#fourth">Rúv</a> |
+		<a href="#fifth">Stöð 2 Bíó</a> |
+		<a href="#sixth">Stöð 3</a>
 
 		<div ng-view />
 	</div>
@@ -66,6 +67,23 @@
 			</table>
 	</script>
 	<script type="text/ng-template" id="third.html">
+			Stöð 2 Sport 2
+			<table style="height: 1000px; width: 1000px; margin: 0 auto;">
+				<tr>
+					<td>Tími</td>
+					<td>Titill</td>
+					<td>Lýsing</td>
+					<td>Lengd</td>
+				</tr>
+				<tr ng-repeat="item in stod2sport2schedule" ng-class="{item.isDone: isDone}">
+					<td>{{item.startTime | date }} </td>
+					<td>{{item.title}}</td>
+					<td>{{item.description}}</td>
+					<td>{{item.duration}}</td>
+				</tr>
+			</table>
+	</script>
+	<script type="text/ng-template" id="fourth.html">
 			Rúv
 			<table style="height: 1000px; width: 1000px; margin: 0 auto;">
 				<tr >
@@ -82,7 +100,7 @@
 				</tr>
 			</table>
 	</script>
-	<script type="text/ng-template" id="fourth.html">
+	<script type="text/ng-template" id="fifth.html">
 			Stöð 2 Bíó
 			<table style="height: 1000px; width: 1000px; margin: 0 auto;">
 				<tr >
@@ -99,7 +117,7 @@
 				</tr>
 			</table>
 	</script>
-		<script type="text/ng-template" id="fifth.html">
+		<script type="text/ng-template" id="sixth.html">
 			Stöð 3
 			<table style="height: 1000px; width: 1000px; margin: 0 auto;">
 				<tr >
